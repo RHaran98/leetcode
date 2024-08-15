@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-
+struct Solution;
 impl Solution {
     pub fn is_anagram(s: String, t: String) -> bool {
         let mut check = HashMap::<char, i32>::new();
@@ -24,4 +24,10 @@ impl Solution {
         }
         false                
     }
+}
+
+fn main()  {
+    let s = Solution::is_anagram("abc".to_string(),"cba".to_string());
+    println!("JA");
+    println!("{}",s);
 }
