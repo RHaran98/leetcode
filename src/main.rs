@@ -1,3 +1,4 @@
+pub mod encode_and_decode_strings;
+pub mod products_of_array_except_self;
 
-fn main()  {
-}
+fn main() {}
