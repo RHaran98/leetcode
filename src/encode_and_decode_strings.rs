@@ -1,9 +1,11 @@
+use std::collections::HashMap;
+
 struct Solution;
 impl Solution {
     pub fn encode(strings: Vec<String>) -> String {
         let mut password = String::new();
         for s in strings.iter() {
-            let length = s.chars().count() as u32;
+            let length = (s.chars().count() as u32);
             password.push(char::from_u32(length).unwrap());
             password.push_str(s);
         }
@@ -16,9 +18,9 @@ impl Solution {
         let curr_char: u32 = 0;
         // let mut s = String::new();
 
-        let s_iter = &mut str.chars().into_iter();
+        let mut s_iter = &mut str.chars().into_iter();
         let mut pass_size = match s_iter.next() {
-            Some(c) => c as usize,
+            Some(c) => (c as usize),
             None => {
                 return strings;
                 0

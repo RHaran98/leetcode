@@ -3,15 +3,20 @@ const N_LETTERS: usize = 26;
 
 struct Solution;
 impl Solution {
-    pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
-        let freqs = nums.fold(HasMap::<i32,u8>::new(), |mut map, num| {
-            
-        } );
-    }
-}
+    pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
+        strs.into_iter().fold(HashMap::<[u8;N_LETTERS], Vec<String>>::new(), |mut map, s| {
+            let freqs = s.bytes().fold( [0;N_LETTERS] , |mut a , c| {
+                a[(c - b'a') as usize] += 1;
+                a
+            });
+            map.entry(freqs).or_default().push(s);
+            map
+        } ).into_values().collect()
+    }   
+}   
 
 fn main()  {
-    let s = Solution::tok_k_frequent(vec![1,1,2,3,4,4,3,3,2,5],2);
+    let s = Solution::group_anagrams(vec!["abc".to_string(),"bac".to_string(),"ab".to_string(),"abcd".to_string(),"ba".to_string()]);
     println!("JA");
     println!("{:?}",s);
 }
