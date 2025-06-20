@@ -31,7 +31,7 @@ impl Solution {
     pub fn three_sum(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
         nums.sort_unstable();
         let size = nums.len();
-        let mut ans = Vec::with_capacity(size/3);
+        let mut ans = Vec::with_capacity(size / 3);
         // println!("Sort {:?}",nums);
 
         for i in 0..size - 2 {
