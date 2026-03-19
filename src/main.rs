@@ -5,5 +5,6 @@ pub mod longest_substring_without_repeating_characters;
 pub mod products_of_array_except_self;
 pub mod three_sum;
 pub mod valid_palindrome;
+pub mod invert_a_binary_tree;
 
 fn main() {}
