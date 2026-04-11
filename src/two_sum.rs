@@ -4,7 +4,7 @@ pub fn argsort<T: Ord>(slice: &[T]) -> Vec<usize> {
     keys.sort_by_key(|x| &slice[*x]);
     keys
 }
-
+struct Solution;
 impl Solution {
     pub fn two_sum(mut nums: Vec<i32>, target: i32) -> Vec<i32> {
         // nums.sort();
