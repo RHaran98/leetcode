@@ -5,21 +5,21 @@ struct Solution;
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
         let char_index = |x: u8| (x - b' ') as usize;
-        let mut curr_counts: [i32; N_CHARS] = [-1; N_CHARS];
-        let chars: Vec<u8> = s.bytes().collect();
+        let mut curr_counts: [Option<usize>; N_CHARS] = [None; N_CHARS];
+        let chars: &[u8] = s.as_bytes();
         let size = chars.len();
         if size == 0 {
             return 0;
         }
         let mut i = 0;
-        curr_counts[char_index(chars[0])] = 0;
+        curr_counts[char_index(chars[0])] = Some(0);
         let mut max_substring: i32 = 1;
         for j in 1..size {
-            if curr_counts[char_index(chars[j])] != -1 {
-                i = max((curr_counts[char_index(chars[j])] + 1) as usize, i);
+            if let Some(index) =  curr_counts[char_index(chars[j])] {
+                i = max(index, i);
             }
 
-            curr_counts[char_index(chars[j])] = j as i32;
+            curr_counts[char_index(chars[j])] = Some(j);
             max_substring = max(max_substring, (j - i + 1) as i32);
             // println!("i,j,max: {} {} {}",i,j,max_substring);
         }
