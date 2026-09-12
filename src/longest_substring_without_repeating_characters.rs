@@ -15,7 +15,7 @@ impl Solution {
         curr_counts[char_index(chars[0])] = Some(0);
         let mut max_substring: i32 = 1;
         for j in 1..size {
-            if let Some(index) =  curr_counts[char_index(chars[j])] {
+            if let Some(index) = curr_counts[char_index(chars[j])] {
                 i = max(index, i);
             }
 

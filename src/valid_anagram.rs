@@ -15,19 +15,19 @@ impl Solution {
                     if *cnt == 0 {
                         check.remove(&c);
                     }
-                },
-                None => return false
+                }
+                None => return false,
             }
         }
         if check.is_empty() {
-            return true
+            return true;
         }
-        false                
+        false
     }
 }
 
-fn main()  {
-    let s = Solution::is_anagram("abc".to_string(),"cba".to_string());
+fn main() {
+    let s = Solution::is_anagram("abc".to_string(), "cba".to_string());
     println!("JA");
-    println!("{}",s);
+    println!("{}", s);
 }

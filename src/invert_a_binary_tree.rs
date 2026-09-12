@@ -1,7 +1,7 @@
 use core::borrow;
-use std::rc::Rc;
 use std::cell::RefCell;
 use std::collections::VecDeque;
+use std::rc::Rc;
 
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
@@ -22,20 +22,21 @@ impl TreeNode {
     }
 }
 
-
 pub struct Solution;
 
 impl Solution {
     pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
         let mut stack = vec![];
         match root.clone() {
-            Some(val) => {stack.push(val);},
-            None => {return root;}
+            Some(val) => {
+                stack.push(val);
+            }
+            None => {
+                return root;
+            }
         }
 
-
         loop {
-
             if let Some(node) = stack.pop() {
                 let mut node = node.borrow_mut();
 
@@ -50,8 +51,7 @@ impl Solution {
                 let r = node.right.take();
                 node.right = l;
                 node.left = r;
-            }
-            else {
+            } else {
                 break;
             }
         }
