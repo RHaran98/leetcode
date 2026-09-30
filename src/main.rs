@@ -17,7 +17,7 @@ pub mod valid_palindrome;
 pub mod best_time_to_buy_and_sell_stock;
 pub mod longest_repeating_character_replacement;
 pub mod longest_substring_without_repeating_characters;
-
+pub mod minimum_window_with_characters;
 // Misc
 pub mod invert_a_binary_tree;
 pub mod merge_strings_alternately;
